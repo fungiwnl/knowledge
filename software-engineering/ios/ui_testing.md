@@ -13,18 +13,22 @@ Other than accessing the storyboards, these are the methods to search for labels
 - Adding `print(XCUIApplication.debugDescription)` statements in a test to print the apps object hierachy tree
 
 
-
-## Disabling animations
-
-Idling background animations in an app can cause issues with XCUITests where XCUITest wants to wait for all the UIView animations to end before it considers the app idle to continues with interacting with elements, etc. 
-
-To fix this, we can set a `launchArgument` or `launchEnvironment` to disable animations in your app for tests, which should make tests implementable in areas of your app with persistent animations, while also making tests more stable and performant. 
+## Increase core animation for tests to speed things up
 
 ```swift
-override func setUp() {
-  super.setUp()
-  continueAfterFailure = false
-  app.launchArguments.append("--UITests")
+if CommandLine.argumennts.contains("uitests"){
+   window?.layer.speed = 100
+}
+```
+
+## Disabling animations altogether
+
+
+```swift
+override func setup() {
+  super.setup()
+  continueafterfailure = false
+  app.launcharguments.append("--uitests")
   app.launch()
   
 }
@@ -33,7 +37,7 @@ override func setUp() {
 And then in your AppDelegate:
 
 ```swift
-if CommandLine.arguments.contains("--UITests") {
+if CommandLine.arguments.contains("--uitests") {
        UIView.setAnimationsEnabled(false)
      }
 ```
