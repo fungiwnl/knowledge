@@ -2,12 +2,12 @@
  
 Snapshot testing is a form of testing that renders a UI, takes a snapshot of it, and compares it to a reference image. The idea behind snapshot testing is that it can catch visual defects such as layout, spacing, font, colour that normal unit or functional UI tests test for.
 
-Inititally popularised by Facebooks library, which got taken by Uber, which now is deprecated. Swift-snapshot-testing is the library to use for all swift snapshotting needs. There are other forms of snapshot testing strategies that don't involve UI components, which is on the list of things to explore.
+Inititally popularised by Facebooks snapshot testing library, which later got maintained by [Uber](https://github.com/uber/ios-snapshot-test-case), which now is deprecated. [Pointsfrees swift-snapshot-testing library](https://github.com/pointfreeco/swift-snapshot-testing) is now the library to use for all swift snapshotting needs. There are other forms of snapshot testing strategies that don't involve UI components, which is on the list of things to explore.
 
 
 ## Basic snapshot test 
 
-```
+```swift
 import SnapshotTesting
 import XCTest
 
@@ -32,7 +32,7 @@ class MyViewControllerTests: XCTestCase {
 ```
 
 ## Re-recording snapshots
-```
+```swift
 ...
    assertSnapshot(matching: sut, as: .image, record: true)
 ```
@@ -40,7 +40,7 @@ class MyViewControllerTests: XCTestCase {
 
 ## Asserting against multiple devices 
 
-```
+```swift
   private func verifyViewController(_ viewController: UIViewController, named: String) {
         let devices: [String: ViewImageConfig] = ["iPhoneX": .iPhoneX,
                                                   "iPhone8": .iPhone8, 
