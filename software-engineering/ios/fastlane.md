@@ -1,13 +1,11 @@
 # Fastlane
 
-Fastlane is an open resource toolchain that simplifies both Android and iOS deployment. In particular, it provides the great benefit of simplying codesigning for iOS, which has historically been a personal pain to manage with some  CI set ups.
-
+Fastlane is an open resource toolchain that simplifies both Android and iOS deployment. In particular, it provides the great benefit of simplying codesigning for iOS, which has historically been a personal pain to manage with CI platforms that don't do all the work for you (i.e buddybuild, bitrise). 
 
 
 ## Pre-requiresites 
 
 - Apple developer account 
-
 
 
 ## Set up

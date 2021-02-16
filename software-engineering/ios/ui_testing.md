@@ -1,8 +1,4 @@
-# Testing
-
-
-
-## UI Testing 
+# UI Testing
 
 XCUITest is a native test framework introduced in iOS 9. It works by running your app in a seperate process from the test, with the test communicating to the app via a form of IPC. Tests are driven by interacting the iOS DOM with elements that can be be identified by IDs and values. 
 
