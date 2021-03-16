@@ -8,5 +8,5 @@
         * [Fastlane](software-engineering/ios/fastlane.md)
     * [AWS](software-engineering/aws/aws.md)
         * [S3 Advanced](software-engineering/aws/s3-advanced.md)
-        * [Athena](software-engineering)/aws/athena.md
+        * [Athena](software-engineering)/aws/athena.md)
 
