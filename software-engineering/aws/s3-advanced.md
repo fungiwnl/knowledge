@@ -4,8 +4,6 @@
 
 ## S3 Replication
 
-
-
 - Cross region replication
 
 - Same region replication 
@@ -25,6 +23,8 @@
 - Will only replicate newer objects after creating rule 
 - Delete markers not replicated by default 
 
+
+
 ## S3 Pre-signed URLs
 
 - Can generate pre-signed URLs using SDK or CLI
@@ -36,6 +36,7 @@
 ### Hands on
 
 `aws s3 presign s3://mybucket/myobject --region my-region`
+
 
 
 ## S3 Storage Classes
@@ -102,6 +103,7 @@
 - File upload > Additional uplaod options -> Storage classes
 
 
+
 ## S3 Lifecycle Rules
 
 - Transaction actions: definies when objects are transitioned to another storage class
@@ -119,7 +121,10 @@
 - Previous version actions
 - Rules for different filters 
 
+
+
 ## S3 Baseline Performance
+
 - Amazon S3 auto scales to high request rates, latency 100-200ms
 - Yuor app can achieve at least 3.5k PUT/COPY/POST/DELETE and 5.5k GET/HEAD requests per prefix in a bucket
 - No liits to number of prefixes in a bucket
@@ -139,10 +144,24 @@
     - can help parallelize uploads (speed up transfers)
 - S3 Transfer Acceleration (upload only)
    - increase trasnfer speed by transferring file to an AWS edge location which will forwward the data to the S3 bucket in the target region
- 
+
+
 
 ## S3 Event notifications
 
 - S3Object Created, S3: ObjectRemoved, S3PReplciation
 - Object name filtering possibble (*.jpg)
 - Use case: generate thumbnails of images uploaded to S3
+
+
+
+## S3 Object Lock & GlacierVault Lock
+
+- S3 Object Lock
+   - Adopt a WORM model
+   - Block na object version deletion for a specified amount of time 
+
+- Glacier Vault Lock
+   - Adopt a WORM model
+   - Lock the policy for future edits (can no loner be changed)
+   - **Helpful for compliance and data retention**
