@@ -9,6 +9,7 @@
     * [AWS](software-engineering/aws/aws.md)
         * [S3 Advanced](software-engineering/aws/s3-advanced.md) 
         * [Athena](software-engineering/aws/athena.md)
-        
+        * [Cloudfront](software-engineering/aws/cloudfront.md)
+        * [Global Accelerator](software-engineering/aws/global-acclerator.md) 
           
 
