@@ -34,5 +34,70 @@
 - If burst credit are empty, you'll get a ProvisionedThroughputException
 - It's then advised to do an exponential back-off retry
 
+## Practical
 
+- Create a dynamoDB table
+- Insert two items
+
+## DynamoDB - DAX
+
+- DAX = DynamoDB Acceleartor
+- Seamless cache for DynamoDB, no appliaction re-write
+- Writes go throguh DAX to DynamoDB
+- Micro second latency for cached read & queries
+- Sovles the Hot Key problem (too many reads)
+- 5 minutes TTL for cache by default
+- Up to 10 nodes in the cluster
+- Multi AZ (3 min for prod recommended)
+- Secure (Encryption at rest with KMS, VPC, IAM, Cloudtrail)
+
+- DAX is a great way to speed up reads on your and start caching your data in DynamoDB
+
+## DynamoDB - Streams
+
+- Changes in DynamoDB (Create, Update, Delete can end up in a DynamoDB stream)
+- This stream can be read by AWS Lambda, and you can:
+   - React to changes in real time (welcome email to new users)
+   - Analytics
+   - Create dervicative tables/ views
+   - Insert into Elastic Search
+- Could implement cross region replication using streams
+- Streams has 24 hours of data retention
+
+## DynamoDB - New features
+
+- Transactions 
+  - All or nothing type of operations
+  - Coorindated Insert, Update & Delete across multiple tables
+  - Inlcude up to 10 unique items or up to 4 MB of data
+
+- On Demand
+  - No capacity planning needed (WCU / RCU) - scales automatically
+  - 2.5x more expensive than provisioned capacity (use with care)
+  - Helpful when spikes are un-predictable or the application is very low throughput
+
+## DynamoDB - Security & Other
+
+- Security:
+  - VPC endpoints
+  - IAM access
+   - Encrytpion at rest using KMS, transit using SSL/TLS
+- Back up and Restore feature available
+  - Point in time restore like RDS
+  - No performance impact
+- Global Tables
+  - Multi region, fully replicated, high performance
+- Amazon DMS can be used to migrate DynamoDB (from Mongo, Oracle, MySQL, S3, etc)
+- Can launch a local DynamoDB on your computer for development purposes)
+
+## DynamoDB - Other features
+
+- Global tables (cross region replication)
+  - Active Active replcation, many regions
+  - Must enable DynamoDB streams for it
+  - Useful for low latency, Disaster recovery purposes
+
+- Capacity planning
+  - Planned capacity: provsion WCU & RCU can enable auto scaling
+  - On-demand capcity: get unlimtied WCU & RCU, no throttle, more expensive
 

@@ -16,3 +16,5 @@
         * [FSx](software-engineering/aws/fsx.md)
         * [Lambda](software-engineering/aws/lambda.md)
         * [DynamoDB](software-engineering/aws/dynamoDB.md)
+        * [API Gateway](software-engineering/aws/api-gateway.md)
+        * [Cognito](software-engineerinog/aws/cognito.md)
