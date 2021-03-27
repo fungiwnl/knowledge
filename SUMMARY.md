@@ -14,3 +14,5 @@
         * [Snowball](software-engineering/aws/snowball.md)
         * [Storage Gateway](software-engineering/aws/storage-gateway.md)
         * [FSx](software-engineering/aws/fsx.md)
+        * [Lambda](software-engineering/aws/lambda.md)
+        * [DynamoDB](software-engineering/aws/dynamoDB.md)
