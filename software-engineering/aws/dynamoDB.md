@@ -101,3 +101,5 @@
   - Planned capacity: provsion WCU & RCU can enable auto scaling
   - On-demand capcity: get unlimtied WCU & RCU, no throttle, more expensive
 
+
+Streams enable DynamoDB to get a changelog and use that changelog to replicate data across regions
