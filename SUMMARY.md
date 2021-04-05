@@ -26,4 +26,5 @@
         * [Storage Gateway](software-engineering/aws/storage-gateway.md)
         * [Snowball](software-engineering/aws/snowball.md)
         * [Storage Summary](software-engineering/aws/storage-summary.md)
-          
+        * [CloudWatch/CloudTrail](software-engineering/aws/cloudwatch.md)
+        * [Config](software-engineering/aws/config.md) 
