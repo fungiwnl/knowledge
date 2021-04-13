@@ -131,4 +131,13 @@ Whitelist
 
   3. Repeat the process above to invite the old master account to the new org
 
- 
+
+## Practical
+
+- Create Organisations
+- Create child aws account 
+- Attach child aws account to organisation
+- Create dev, test, prod OU
+- Create Finance and HR OU to prod
+- Create Service Policy to Deny Athena use
+- Try use Athena 
