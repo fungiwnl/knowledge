@@ -108,4 +108,26 @@
 
 ## KMS Hands on w/ CLI
 
- 
+- Create a Customer managed key
+- Use ti to encrypt and decrypt with KMS CLI
+
+## KMS Key Rotation
+
+- For CMK (not AWS manged CMK)
+- If enabled: auto key rotation happens every year
+- Previous key is kept active so you can decrypt old data
+- New key has the same CMK ID (only the backing key is changed)
+
+### Manual rotation
+
+- When you want to rotate key every 90 days, 180 days ,etc
+- New Key has a different CMK ID
+- Keep the previous key active so you can decrypt old data
+- Better to use aliases in this case (to hide the change of key for the app)
+- Good solution to rotate CMK that are not eligible for auto rotation (like asymmetric CMK)
+
+### KMS Alias Updating
+
+- Better to use aliases in this case (to hide the change of the key for the application)
+
+
