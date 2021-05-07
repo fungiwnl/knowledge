@@ -141,4 +141,12 @@
 
 ### NAT Gateway
 
+- AWS Managed NAT, higher bandwidth, better availability, no admin
+- Pay by the hour for usage and bandwidth
+- NAT is created in a specific AZ. uses an EIP
+- Cannot be used by an instance in that subnet (only from other subnets)
+- Requires an IGW (Private Subnet => NAT => IGW)
+- 5 Gbps of bandwidth with autoamtic scaling up to 45 GBps
+- No security group to manage
+
 
