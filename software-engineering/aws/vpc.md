@@ -149,4 +149,20 @@
 - 5 Gbps of bandwidth with autoamtic scaling up to 45 GBps
 - No security group to manage
 
+## DNS Resolution in VPC
+
+- **enableDnsSupport: (= DNS Resolution setting)**
+  - Default True
+  - Helps decide if DNS resolution is supported for the VPC
+  - If True, queries the AWS DNS server at 169.254.169.253
+- **enableDnsHostname: (= DNS Hostname setting)**
+  - False by default for newly created VPC, True by default for Default VPC
+  - Won't do anything unless enableDnsSupport=true
+  - If True, Assign public hostname to EC2 instance if it has a public 
+- **If oyu use custom DNS domain names in a private zone in ROute 53, you must set both these attributes to true**
+
+### Hands on 
+
+- Enabling DNS Hostname has a public DNS 
+- And then can go into Route 53 and create a private hosted zone for Amazon VPC
 
