@@ -166,3 +166,200 @@
 - Enabling DNS Hostname has a public DNS 
 - And then can go into Route 53 and create a private hosted zone for Amazon VPC
 
+## Network ACLs & Security Groups
+
+- NACL are like a firewall which control traffic from and to subnet
+- Default NACL allows everything outbound and everything inbound
+- **ONE NACL per Subnut, new Subnets are siggned the Default NACL**
+- Define NACL rules
+  - Rules have a number (1-32766) and higher precedence with a lower number
+  - E.g if you define #100 ALLOW <IP> and #200 DENY <IP>, IP willbe allowed
+  - Last rule is an * and denies a request in case of no rule match
+  - AwS recommends adding rules by increment of 100
+- Newly created NACL wil deny everything
+- NACL are a great way of blocking a specific IP at the subnet level
+
+### Network ACL vs Security Group
+
+- [Insert table]
+
+## VPC Peering
+
+- Connect two VPC, privately using AWS' network
+- Make them behave as if they were in the same network
+- Must not have overlapping CIDR
+- VPC Peering connection is not transitive (msut be established for each VPC that need to communicate with one another)
+- You can do VPC peering with another AWS account
+- You must update route tables in each VPC's subnets to ensure instances can communicate
+
+### Good to knows
+
+- VPC peering can work inter-region, cross account
+- You can reference a security group of a peered VPC (works cross account)
+
+### Hands on
+
+- Create peering connection to connect demo VPC to default VPC
+
+## VPC Endpoints
+
+- Endpoints allow you to connect to AWS using a private network instead of the public www network
+- They scale horizontally and are redundant
+- They remove the need of IGW, NAT, etc... to access AWS services
+- Interface: provisions an ENI (private IP address) as an entry point (must attach security group) -- most AWS services
+- Gateway: provisions a target and must be used in a route table - S3 and DynamoDB
+- In case of issues:
+   - Check DNS setting resolution in your VPC
+   - Check Route Tables
+
+### Hands on
+
+-
+
+## VPC Flow Logs + Athena
+
+- Capture information about IP traffic going into your interfaces
+  - VPC Flow logs
+  - Subnet flow logs
+  - Elastic Network Interface Flow logs
+- Helps to monitor & troubleshoot connectivity issues
+- Flow logs data can go to S3 / CloudWatch logs
+- Captures network information from AWS managed interfaces too: ELB, RDS, ElastiCache, Redshift, Workspaces
+
+### Flog Log Syntax
+
+- <verison> <account-id> <inteface-id> <srcaddr> <dstddr> <srcport> 
+  <dstport> <protocol> <packets> <bytes> <start> <end> <action> <log-status>
+- Srcaddr, dstaddr help identify problematic IP
+- Srcport, dstport help identify problematic ports
+- Action: success or failure of the request due to Security Group / NACL
+- Can be used for analytics on usage patterns or malicious behaviour
+- Flow logs example
+- **Query VPC flow logs using Athena on S3 or CloudWatch Logs Insights**
+
+### Hands on
+
+- Create flow logs for demo VPC with cloudwatch log group and s3 bucket
+- Analyze logs on s3 bucket with athena
+
+## Bastion Hosts
+
+- We can use a Bastion Host to SSH into our private instances
+- The bastion is in the public subnet which is then connected to all other private subnets
+- Bastion Host security group must be tightened
+- Exam Tip: Make sure the bastion host only has port 22 traffic from the IP you need, not from the security groups of your other instances
+
+## Site to Site VPN
+
+- Customer gateway on Corporate network side
+- VPN gateway on AWS side
+
+- Customer gateway:
+  - Software app or physical device on customer side of the VPN connection
+  - IP Adress:
+    - Use static, internet-routable IP address for your customer gateway device
+    - If behind a CGW behind NAT 9with NAT-T), use the public IP addresso fthe NAT
+- Virtual private gateway
+  - VPN concentrator on the AWS side of the VPN connection
+  - VGW is created and attached to the VPC from which you want to create the Site to Site VPN connection
+  - Possibility to customize the ASN
+
+## Direct Connect (DX)
+
+- Provides a dedicated **private** connection from a remote network to your VPC
+- Dedicated connection must be setup between your DC and AWS Direct Connection locations
+- You need to setup a VPG on yuor VPC
+- Access public resources (s3) and ec2 on same connection
+- Use Cases:
+  - Increase bandwidth throughput - working with large data sets - lower cost
+  - More consistent network experience - applications using real time data feeds
+  - Hybrid Environments (on prem + cloud)
+- Supports IPv4, IPv6
+
+### Direct Connection Diagram
+
+- [Insert diagram]
+
+## Egress 
+
+- Egress only Internet Gateway is for IPv6 only
+- Similar fnction as a NAT, but a NAT is for IPv4
+- Good to know: IPv6 are all public addresses
+- Therefore all our instances with IPv6 are publicly accessible 
+- Egress Only Internet Gateway gives our IPv6 instances access to the internet, but they won't be directly reachable by the internet
+- After creating an Egress Only Gateway, edit the route tables 
+
+### Hands on
+
+- Create Eghress internet gateway and add it to route table for all IPV4 ::0/
+
+## AWS Private Link 
+
+### Exposing services in your VPC to toher VPC
+
+- Option 1: make it public
+  - Goes through public www
+  - Tough to manage access
+
+- Option 2: VPC peering
+  - Must create many pering relations
+  - Opens the **whole** network
+
+- Option 3: AWS Private Link (VPC Endpoint Services)
+  - Most secure & scalable wy to expose a serivce to 1000s of VPC
+  - Does not require VPC peering, internet gateway, NAT, route tables..
+
+## AWS Classic Link & EC2-Classic (deprecated)
+
+- EC2-Classic: instances run in a single network shared with other customers
+- Amazon VPC: your instances run logically isolated to your AWS account
+
+- ClassicLink: allows you to link EC2-Classic instances to a VPC in your account
+  - Must associate with a security group
+  - Enables communication using private IPv4 addresses
+  - Removes the need to make use of public IPv4 addresses or Elastic IP addresses
+
+- Likely to be distractors at the exam
+
+## AWS VPN CloudHub
+
+- Provide a secure communication between sites, if you have multiple VPN connections
+- Low cost hub-and-spoke model for primary or secondary network connectivity between locations
+- It's a VPN connection so it goes over the public internet
+
+## Transit Gateway
+
+- Network toplogies can become complicated, so AWS came up with Transit gateway
+- For having transitive peering between thousands of VPC and on-premises, hub-and-spoke (star) connection
+- Regional resource, can work cross-region
+- Share cross-acount using Resource Access Manager (RAM)
+- You can peer  Transit Gateways across regions
+- Route Tables: limit which VPC can talk with other VPC
+- Works with Direct Connect Gateway, VPN conections
+- Supports IP Multicast (not supported by any other AWS service)
+
+### Site to Site VPN ECMP
+
+- ECMP = equal-cost multi path routing
+- Routing strategy to allow forward a packet over multiple best path
+- Use case: create multiple Site-to-Site VPN connections to increase the bandwidth of your connections to AWS
+
+### Throughput with ECMP
+
+- VPN to virtual private gateway
+- 1x conection --> 1x VPC
+- 1x = 1.25GBps
+- 2 tunnels limit
+
+- VPN to transit gateway
+- 1x = 1x x4 VPC
+- 1x = 2.5Gbps (ECMP) - 2 tunnels used
+- 2x = 5.0 Gbps (ECMP)
+- 3x = 7.5 Gbps (ECMP)
+- +$$ per GB of TGW processed data
+
+### Share direct connect between multiple accounts
+
+- [Insert diagram]
+
+
