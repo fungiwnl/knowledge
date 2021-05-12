@@ -363,3 +363,23 @@
 - [Insert diagram]
 
 
+## IPv6 in VPC
+
+- *IPv4 cannot be disabled for your VPC and subnets*
+- You can enable IPv6 (they're public IP addresses) to operate in dual-stack mode:
+   - Example: 2001:0db...
+   - Supports ~ 2^128 IPv6 addresses (vs 2^32 for IPv4) 
+- Yuor EC2 instances would get at least a private internal IPv4 and a public IPv6
+- They can communicate using their IPv4 or IPv6
+
+- So if you cannot launch an instance in your subnet
+  - It's not because it cannot acquire an IPv6 (the space is very large)
+  - It's because there are no available IPv6 in yuor subnet
+- Thus create a new IPv4 CIDR in yuor subnet 
+
+### Hands on
+
+- Create IPv6 VPC
+- Create subnet 
+- Create EC2 on IPV6
+- Clean up 
