@@ -79,3 +79,23 @@
 
 1. Reference
 2. Functions
+
+
+## Practical
+
+```yml
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      AvailabilityZone: ap-southeast-2
+      ImageId: ami-a4c7edb2
+      InstanceType: t2.micro
+```
+
+## StackSets
+
+- Create, update, or delete stacks across multiple accounts and regions with a single operation
+- Admin account to create StackSets
+- Trusted accounts to create, update, delete stack instance from StackSets
+- When you update a stack set, all associated stack instances are  updated throughout all accounts and regions
