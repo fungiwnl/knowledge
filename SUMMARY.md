@@ -9,8 +9,8 @@
         
     * [AWS](software-engineering/aws/aws.md)
         
-        - [Storage](software-engineering/aws/storage.md)
-          - [S3](software-engineering/aws/s3-advanced.md)
+        - [Storage](software-engineering/aws/storage/storage.md)
+          - [S3](software-engineering/aws/storage/s3-advanced.md)
         
         * [Athena](software-engineering/aws/athena.md)
         * [Cloudfront](software-engineering/aws/cloudfront.md)
@@ -32,4 +32,3 @@
         * [Storage Summary](software-engineering/aws/storage-summary.md)
         * [CloudWatch/CloudTrail](software-engineering/aws/cloudwatch.md)
         * [Config](software-engineering/aws/config.md) 
-
