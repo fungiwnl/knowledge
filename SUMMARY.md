@@ -12,6 +12,8 @@
         - [Storage](software-engineering/aws/storage/storage.md)
           - [S3](software-engineering/aws/storage/s3-advanced.md)
           - [Snowball](software-engineering/aws/storage/snowball.md)
+          - [Storage Gateway](software-engineering/aws/storage/storage-gateway.md)
+          - [Storage Summary](software-engineering/aws/storage/storage-summary.md)
         
         * [Athena](software-engineering/aws/athena.md)
         * [Cloudfront](software-engineering/aws/cloudfront.md)
@@ -27,8 +29,5 @@
         * [Kinesis](software-engineering/aws/kinesis.md)
         * [MQ](software-engineering/aws/mq.md)
         * [SAM](software-engineering/aws/sam.md)
-        * [Storage Gateway](software-engineering/aws/storage-gateway.md)
-        * [Snowball](software-engineering/aws/snowball.md)
-        * [Storage Summary](software-engineering/aws/storage-summary.md)
         * [CloudWatch/CloudTrail](software-engineering/aws/cloudwatch.md)
         * [Config](software-engineering/aws/config.md) 
