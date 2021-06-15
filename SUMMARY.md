@@ -6,8 +6,12 @@
         * [UI Testing](software-engineering/ios/ui_testing.md)
         * [Snapshot Testing](software-engineering/ios/snapshot_testing.md)
         * [Fastlane](software-engineering/ios/fastlane.md)
+        
     * [AWS](software-engineering/aws/aws.md)
-        * [S3 Advanced](software-engineering/aws/s3-advanced.md)  
+        
+        - [Storage](software-engineering/aws/storage.md)
+          - [S3](software-engineering/aws/s3-advanced.md)
+        
         * [Athena](software-engineering/aws/athena.md)
         * [Cloudfront](software-engineering/aws/cloudfront.md)
         * [Global Accelerator](software-engineering/aws/global-accelerator.md)
@@ -28,3 +32,4 @@
         * [Storage Summary](software-engineering/aws/storage-summary.md)
         * [CloudWatch/CloudTrail](software-engineering/aws/cloudwatch.md)
         * [Config](software-engineering/aws/config.md) 
+
