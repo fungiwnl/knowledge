@@ -13,13 +13,12 @@
           - [S3](software-engineering/aws/storage/s3-advanced.md)
           - [Snowball](software-engineering/aws/storage/snowball.md)
           - [Storage Gateway](software-engineering/aws/storage/storage-gateway.md)
+          - [FSx](software-engineering/aws/storage/fsx.md)
           - [Storage Summary](software-engineering/aws/storage/storage-summary.md)
         
         * [Athena](software-engineering/aws/athena.md)
         * [Cloudfront](software-engineering/aws/cloudfront.md)
         * [Global Accelerator](software-engineering/aws/global-accelerator.md)
-        * [Storage Gateway](software-engineering/aws/storage-gateway.md)
-        * [FSx](software-engineering/aws/fsx.md)
         * [Lambda](software-engineering/aws/lambda.md)
         * [DynamoDB](software-engineering/aws/dynamoDB.md)
         * [API Gateway](software-engineering/aws/api-gateway.md)
@@ -31,3 +30,4 @@
         * [SAM](software-engineering/aws/sam.md)
         * [CloudWatch/CloudTrail](software-engineering/aws/cloudwatch.md)
         * [Config](software-engineering/aws/config.md) 
+
