@@ -11,11 +11,11 @@
         
         - [Storage](software-engineering/aws/storage/storage.md)
           - [S3](software-engineering/aws/storage/s3-advanced.md)
+          - [Snowball](software-engineering/aws/storage/snowball.md)
         
         * [Athena](software-engineering/aws/athena.md)
         * [Cloudfront](software-engineering/aws/cloudfront.md)
         * [Global Accelerator](software-engineering/aws/global-accelerator.md)
-        * [Snowball](software-engineering/aws/snowball.md)
         * [Storage Gateway](software-engineering/aws/storage-gateway.md)
         * [FSx](software-engineering/aws/fsx.md)
         * [Lambda](software-engineering/aws/lambda.md)
