@@ -17,7 +17,7 @@
 ## Compatibility
 
 - Works with Elastic IP, EC2, ALB, NLB, public or private
-- Consitenct performance
+- Consistent performance
 - Health checks
 - Security
 
