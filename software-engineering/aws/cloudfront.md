@@ -24,15 +24,15 @@
 
 ## CloudFront - ALB or EC2 as an Origin
 
-
 ## CloudFront Geo Restriction
 
 - You can restrict who can access your distribution
-  - Whitelsit
+  - Whitelist
   - Blacklist 
 
-- The country is determiend by using a 3rd party Geo-IP database
-- Use case: Copyright Laws to control access to content
+- The country is determined by using a 3rd party Geo-IP database
+
+- **Use case**: Copyright Laws to control access to content
 
 ## Practical
 
@@ -50,8 +50,46 @@
    - Trusted signers (which AWS accounts can create signed URLs)
 
 - How long URL should be valid for?
-  - Shared cotent (movie, music); make it short ( few mins)
+  - Shared cotent (movie, music); make it short (few mins)
   - Private content (private to the user): you can make it last for years
 
 - Signed URL = access stop invididual files (one signed URL per file)
 
+## CloudFront Pricing
+
+- CloudFront Edge locations are all around the wrold
+- The cost of data out per edge location varies
+
+### Price classes
+
+- You can reduce the number of edge locations for **cost reduction**
+- Three price classes
+    - Price Class All: all regions -- best performance
+    - Price Class 200: most regions, but excludes the most expensive regions
+    - Price Class 100: only the least expensive regions
+
+
+## CloudFront Multiple Origin
+
+- Route to different kind of origins based on the content type
+- Based on path pattern:
+    - /images/*
+    - /api/*
+    - /*
+
+## CloudFront Origin Groups
+
+- To increase high availbility to do failover
+- Origin Group: one primary and one secondary origin
+- If the primary origin fails, the second one is used
+
+
+## CloudFront Field Level Encryption
+
+- Protect user sensitive information through application stack
+- Adds an additional layer of security along with HTTPS
+- Sensitive information encrpyted at the edge close to user
+- Uses asymmetric encryption
+- Usage:
+    - Specify set of fields in POST requests that you wnt to be encrypted (up to 10 fields)
+    - Specify the public key to encrypt them
