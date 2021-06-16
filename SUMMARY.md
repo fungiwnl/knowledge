@@ -12,6 +12,7 @@
         - [Storage](software-engineering/aws/storage/storage.md)
           - [S3](software-engineering/aws/storage/s3-advanced.md)
           - [Snowball](software-engineering/aws/storage/snowball.md)
+          - [Snow Family](software-engineering/aws/storage/snow-family.md)
           - [Storage Gateway](software-engineering/aws/storage/storage-gateway.md)
           - [FSx](software-engineering/aws/storage/fsx.md)
           - [Storage Summary](software-engineering/aws/storage/storage-summary.md)
