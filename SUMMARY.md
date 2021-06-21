@@ -8,7 +8,9 @@
         * [Fastlane](software-engineering/ios/fastlane.md)
         
     * [AWS](software-engineering/aws/aws.md)
-        
+        - [Content Delivery](software-engineering/aws/content-delivery/content-delivery.md)
+            - [CloudFront](software-engineering/aws/content-delivery/cloudfront.md)
+            - [Global Acclerator](software-engineering/aws/content-delivery/global-accelerator.md)
         - [Storage](software-engineering/aws/storage/storage.md)
           - [S3](software-engineering/aws/storage/s3-advanced.md)
           - [Snowball](software-engineering/aws/storage/snowball.md)
@@ -20,9 +22,8 @@
           - [CloudWatch](software-engineering/aws/monitoring/cloudwatch.md)
           - [CloudTrail](software-engineering/aws/monitoring/cloudtrail.md)
           - [Config](software-engineering/aws/monitoring/config.md) 
+        
         * [Athena](software-engineering/aws/athena.md)
-        * [Cloudfront](software-engineering/aws/cloudfront.md)
-        * [Global Accelerator](software-engineering/aws/global-accelerator.md)
         * [Lambda](software-engineering/aws/lambda.md)
         * [DynamoDB](software-engineering/aws/dynamoDB.md)
         * [API Gateway](software-engineering/aws/api-gateway.md)
