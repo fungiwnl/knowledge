@@ -11,9 +11,7 @@
 - A trail can be applied to All regions (default) or a single Region.
 - If a resource is deleted in AWS, investigate CloudTrail first
 
-## CloudTrail Diagram
-
-![cloudtrail diagram](./images/cloudtrail-diagram.png)
+![cloudtrail diagram](../images/cloudtrail-diagram.png)
 
 ## CloudTrail Events
 
@@ -51,4 +49,4 @@
 - Events are stored for 90 days in CloudTrail
 - To keep events beyond this period, log them to S3 and use Athena (for auditing purposes for example)
 
-![cloudtrail retention](./images/cloudtrail-retention.png)
+![cloudtrail retention](../images/cloudtrail-retention.png)
