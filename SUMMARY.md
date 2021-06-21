@@ -16,7 +16,10 @@
           - [Storage Gateway](software-engineering/aws/storage/storage-gateway.md)
           - [FSx](software-engineering/aws/storage/fsx.md)
           - [Storage Summary](software-engineering/aws/storage/storage-summary.md)
-        
+        - [Monitoring](software-engineering/aws/monitoring/monitoring.md)
+          - [CloudWatch](software-engineering/aws/monitoring/cloudwatch.md)
+          - [CloudTrail](software-engineering/aws/monitoring/cloudtrail.md)
+          - [Config](software-engineering/aws/monitoring/config.md) 
         * [Athena](software-engineering/aws/athena.md)
         * [Cloudfront](software-engineering/aws/cloudfront.md)
         * [Global Accelerator](software-engineering/aws/global-accelerator.md)
@@ -29,6 +32,3 @@
         * [Kinesis](software-engineering/aws/kinesis.md)
         * [MQ](software-engineering/aws/mq.md)
         * [SAM](software-engineering/aws/sam.md)
-        * [CloudWatch/CloudTrail](software-engineering/aws/cloudwatch.md)
-        * [Config](software-engineering/aws/config.md) 
-
