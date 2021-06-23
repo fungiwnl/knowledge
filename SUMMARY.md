@@ -15,7 +15,6 @@
             - [SNS](software-engineering/aws/decoupling/sns.md)
             - [Kinesis](software-engineering/aws/decoupling/kinesis.md)
             - [MQ](software-engineering/aws/decoupling/mq.md)
-        * [MQ](software-engineering/aws/mq.md)
         - [Databases](software-engineering/aws/databases/databases.md)
             - [Database Comparison](software-engineering/aws/databases/database-comparison.md)
             - [Redshift](software-engineering/aws/databases/redshift.md)
