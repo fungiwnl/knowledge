@@ -2,9 +2,6 @@
 
 - Serverless API service
 
-
-## Intro
-
 - AWS Lambda + API Gateway: No infra to manage
 - Support for the WebSocket Protocl
 - Handle API versioning (v1, v2...)

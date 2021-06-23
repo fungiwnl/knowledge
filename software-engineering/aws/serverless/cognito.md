@@ -34,7 +34,7 @@
   - These creds come with a pre-defined IAM policy stating permissions
 
 - **Example:**
-  - prvoide (temp) acess to write to S3 bucket using Facebook Login
+  - Provide (temp) access to write to S3 bucket using Facebook Login
 
 ## Cognito Sync
 
