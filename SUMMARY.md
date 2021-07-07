@@ -37,3 +37,8 @@
           - [CloudWatch](software-engineering/aws/monitoring/cloudwatch.md)
           - [CloudTrail](software-engineering/aws/monitoring/cloudtrail.md)
           - [Config](software-engineering/aws/monitoring/config.md)
+        - [Other](software-engineering/aws/other/other.md)
+          - [Cost Explorer](software-engineering/aws/other/aws-cost-explorer.md)
+          - [Elastic Transcoder](software-engineering/aws/other/aws-elastic-transcoder.md)
+          - [Opworks](software-engineering/aws/other/aws-opworks.md)
+          - [Workspaces](software-engineering/aws/other/aws-workspaces.md)
